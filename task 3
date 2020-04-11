@@ -1,0 +1,30 @@
+# 14 вариант
+def Input():
+	arr = list(map(int, input().split())) #Ввод массива через пробел
+	return arr
+def Output(arr):
+	for numb in arr:
+		print(numb, end=" ")
+def Avg(arr):
+	if len(arr) == 0:
+		return 0
+	else:
+		sum = 0
+		for numb in arr:
+			sum += numb
+		return sum / len(arr)
+def MaxDev(arr):
+	avg = Avg(arr)
+	if avg == 0:
+		return
+	else:
+		max = abs(arr[0] - avg)
+		for numb in arr:
+			if abs(numb - avg) > max:
+				max = abs(numb - avg)
+		return max
+a = []
+b = []
+a = Input()
+b = Input()
+print((Avg(a)+Avg(b))/(MaxDev(a)+MaxDev(b)))
