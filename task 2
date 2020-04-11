@@ -1,0 +1,24 @@
+# 14 вариант
+def MaxNeg(arr):
+	max = 0
+	for numb in arr:
+		if numb < 0:
+			max = numb
+	if max == 0:
+		return
+	for numb in arr:
+		if numb < 0 and numb > max:
+			max = numb
+	return max
+def AverageEven(arr):
+	count = 0
+	sum = 0
+	for numb in arr:
+		if numb % 2 == 0:
+			sum += numb
+			count+= 1
+	return sum / count
+
+array = [-5, -2, 5, 10, 0]
+print (MaxNeg(array))
+print (AverageEven(array))
